@@ -1,0 +1,15 @@
+﻿@model Wishes
+@using Microsoft.AspNetCore.Http;
+@{
+    string myWishList = Context.Session.GetString("wish");
+    Wishes wishList = Newtonsoft.Json.JsonConvert.DeserializeObject<Wishes>(myWishList);
+}
+<img src="~/Images/smoke.jpg" style="position:absolute;top:0;left:0;width:100%;z-index:-1;" />
+<div class="bg-light p-4 rounded-left" style="opacity:.inherit;width50%;">
+    <h2>Here are your three wishes</h2>
+    <ul>
+        <li>@wishList.wish1</li>
+        <li>@wishList.wish2</li>
+        <li>@wishList.wish3</li>
+    </ul>
+</div>

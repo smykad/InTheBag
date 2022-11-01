@@ -31,7 +31,7 @@ namespace InTheBag
                 options.IdleTimeout = TimeSpan.FromSeconds(60 * 5);
                 options.Cookie.IsEssential = true; // default is false
             });
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
