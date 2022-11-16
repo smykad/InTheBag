@@ -28,5 +28,19 @@ namespace InTheBag.Controllers
             else
                 return View("Novice");
         }
+        // type Genie/Create2/name/age/yearsExperience
+        // example: /Genie/Create2/Lisa/33/3343
+
+        public IActionResult Create2()
+        {
+            var name = RouteData.Values["GenieName"];
+            int Years = Int32.Parse((string)RouteData.Values["Age"]);
+            int numGranted = Int32.Parse((string)RouteData.Values["WishesGranted"]);
+            
+            if (numGranted > 5000 || Years > 1000)
+                return View("ExperiencedGenie");
+            else
+                return View("Novice");
+        }
     }
 }
